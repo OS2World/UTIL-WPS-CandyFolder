@@ -1,0 +1,17 @@
+GetStrings:
+nlsStrings.1='Haben Sie Kopien ihrer INI-Dateien erstellt?'
+nlsStrings.2='Wenn nicht, sollten Sie jetzt abbrechen!'
+nlsStrings.3='<ENTER> zum Installieren oder Ctrl-c fÅr Abbruch.'
+nlsStrings.4='Aktuelles Verzeichnis ist '
+nlsStrings.5='Registriere Klasse '
+nlsStrings.6='Fehler beim Registrieren von '
+nlsStrings.7='Ende...'
+nlsStrings.8="EinfÅhrung zu^CandyFolder"
+nlsStrings.9='Fehler beim Erstellen des URL-Objekts'
+nlsStrings.10='Hinweis: Die WPS mu· neu gestartet werden, um die neue Klasse zu laden.'
+nlsStrings.11='Bitte <ENTER> eingeben.'
+/* # of strings */
+nlsStrings.0=11
+
+return
+

@@ -1,0 +1,14 @@
+LIBRARY CANDYWPS INITGLOBAL
+DESCRIPTION 'CandyBarZ WPS-Classes - (C) netlabs.org & C.Wohlgemuth 2001' 
+PROTMODE
+CODE PRELOAD DISCARDABLE
+DATA MULTIPLE NONSHARED LOADONCALL
+
+EXPORTS  
+        CandyFolderClassData
+        CandyFolderCClassData
+        CandyFolderNewClass
+        M_CandyFolderClassData
+        M_CandyFolderCClassData
+        M_CandyFolderNewClass
+

@@ -1,0 +1,49 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "candyinc.h"
+
+DLGTEMPLATE IDDLG_TRANSPARENCY LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDDLG_TRANSPARENCY, 34, 8, 193, 143, NOT FS_DLGBORDER | 
+            WS_VISIBLE | WS_SYNCPAINT
+    BEGIN
+        GROUPBOX        "Transparency", 300, 4, 19, 185, 109, WS_PARENTCLIP | 
+                        WS_SYNCPAINT
+                        PRESPARAMS PP_FONTNAMESIZE, "9.WarpSans"
+        CONTROL         "", IDST_IMAGERECT, 63, 88, 65, 30, WC_STATIC, 
+                        SS_HALFTONERECT | WS_VISIBLE | WS_PARENTCLIP | 
+                        WS_SYNCPAINT
+                        PRESPARAMS PP_FONTNAMESIZE, "9.WarpSans"
+        CTEXT           "Red", IDST_RED, 7, 64, 36, 10, DT_VCENTER | NOT WS_GROUP
+        CTEXT           "Green", IDST_GREEN, 7, 43, 36, 9, DT_VCENTER | NOT WS_GROUP
+        CTEXT           "Blue", IDST_BLUE, 7, 22, 36, 10, DT_VCENTER | NOT WS_GROUP
+        SLIDER          IDSL_RED, 45, 64, 104, 20, SLS_LEFT | SLS_BUTTONSTOP
+                        CTLDATA 12, 0, 9, 0, 5, 0
+        SPINBUTTON      IDSB_RED, 151, 64, 33, 12, SPBS_NUMERICONLY | 
+                        SPBS_MASTER | WS_GROUP
+        SLIDER          IDSL_GREEN, 45, 43, 104, 20, SLS_LEFT | 
+                        SLS_BUTTONSTOP
+                        CTLDATA 12, 0, 9, 0, 5, 0
+        SPINBUTTON      IDSB_GREEN, 151, 43, 33, 12, SPBS_NUMERICONLY | 
+                        SPBS_MASTER | WS_GROUP
+        SLIDER          IDSL_BLUE, 45, 22, 104, 20, SLS_LEFT | 
+                        SLS_BUTTONSTOP
+                        CTLDATA 12, 0, 9, 0, 5, 0
+        SPINBUTTON      IDSB_BLUE, 151, 22, 33, 12, SPBS_NUMERICONLY | 
+                        SPBS_MASTER | WS_GROUP
+        PUSHBUTTON      "Cancel", ID_COLORONLY, 38, 3, 52, 12
+        PUSHBUTTON      "Standard", IDPB_STANDARD, 98, 3, 52, 12
+    END
+END
+
+STRINGTABLE
+BEGIN
+;******** The class title (max 100 chars) *****************
+IDSTR_CLASSTITLE          "Candy folder"
+
+;******** Transparency check box text ****
+IDSTR_TRANSCHECKBOXTEXT          "Transparency"
+
+END
+

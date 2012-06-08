@@ -1,0 +1,171 @@
+<HTML>
+<HEAD>
+<TITLE>CandyFolder</TITLE>
+
+<META NAME="DESCRIPTION" CONTENT="Candy folder -  An add on for CandyBarZ to enable transparency in folders">
+<META NAME="KEYWORDS" CONTENT="CandyBarZ folder transparency">
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<H1>CandyFolder</H1>
+<P>
+Ok, we did it again ;-). <A HREF="http://www.netlabs.org">Netlabs</A> brings you a new
+gadget to push your GHz Pentiathlon IX to the limit.
+</P>
+<CENTER>
+<IMG SRC="./picture.jpg" WIDTH=434 height=461>
+</CENTER>
+
+<P>
+CandyFolder is an add on to <A HREF="http://candybarz.netlabs.org">CandyBarZ</A> which brings you transparency for WPS-folders. It also works
+stand alone so you may use it with your prefered WPS-beautifier.
+</P>
+<H3>Contents</H3>
+<UL>
+<LI><A HREF=#license>License</A>
+<LI><A HREF=#installation>Installation</A>
+<LI><A HREF=#uninstallation>Uninstallation</A>
+<LI><A HREF=#usage>Usage</A>
+<LI><A HREF=#setup>Setup</A>
+<LI><A HREF=#help>Getting help</A>
+</UL>
+
+<HR>
+<A name="license">
+<H2>License</H2></A>
+<P>
+CandyFolder is released under the terms of the General Public License (<A HREF="./COPYING">GPL</A>).
+See the file <A HREF="./COPYING">COPYING</A> in the subdirectory <B>Docs</B> for more information.
+<P>
+<PRE>
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; see the file COPYING.  If not, write to
+the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+</PRE>
+
+<HR>
+<A name="installation">
+<H2>Installation</H2></A>
+<P>
+<FONT color=RED>First of all backup your INI files!</FONT>
+<OL>
+<LI>Unzip the archive to a folder of your choice.
+<LI>Open an OS/2 command window and cd into the directory with the archive contents.
+<LI>Run install.cmd
+<LI>Restart the WPS
+</OL>
+</P>
+<P>
+The install skript will register the new folder class <B>CandyFolder</B>. Afterwards it replaces
+the <B>WPFolder</B> class with this new class to give every folder on your system the transparency
+feature.
+</P>
+<P>
+If your WPS hangs on startup boot to an OS/2 command window and delete the <B>CANDYWPS.DLL</B>.
+</P>
+<HR>
+<A name="uninstallation">
+<H2>Uninstallation</H2></A>
+<P>
+To uninstall simply run the uninstall script. It unreplaces the folder class and deregisters <B>CandyFolder</B>.
+After restarting the WPS you may delete the files.
+</P>
+<HR>
+
+<A name="usage">
+<H2>Usage</H2></A>
+<P>
+Open the settings notebook of your desktop and go to the <B>Background</B> page.
+Select an image with <FONT COLOR=RED>256 colors and the size of your screen</FONT>. The image width will be checked against
+your physical resolution. The image will only be accepted if this check is passed. 
+It's <B>not</B> possible to use tiled or stretched images! 
+</P>
+<P>
+Open the settings notebook of a folder on your system. On the background page you'll find a new
+checkbox <B>Transparency</B> to enable transparency for the particular folder. The next page
+lets you change the color shading.
+</P>
+<HR>
+<A name="setup">
+<H2>Setup</H2></A>
+<P>
+To effectively use the new transparency feature a new setup string can be used.
+</P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=10>
+<TR>
+<TD>Name</TD>
+<TD>Value</TD>
+<TD>Description</TD>
+</TR>
+<TR>
+<TD>TRANSPARENCY</TD>
+<TD>E,R,G,B</TD>
+<TD>
+<P>
+E = 1/0, <BR>
+1: Enable transparency<BR>
+0: Disable transparency
+</P>
+<P>
+R = -127...128. Color adaptation for red.<BR>
+G = -127...128. Color adaptation for Green.<BR>
+B = -127...128. Color adaptation for blue.<BR>
+</P>
+<P>
+The range for the color adaptation is -127...0...128. <BR>
+A negative value means decrease the color component of the image.
+0 means do not change the color value. A positive value increases the component of the color. 
+</P>
+</TD>
+</TR>
+</TABLE>
+
+<H3>Examples</H3>
+<P>
+<UL>
+<LI>Disable transparency: TRANSPARENCY=0,0,0,0
+<LI>Enable Transparency and set color shading to blue: TRANSPARENCY=1,0,0,20
+<LI>Enable transparency and darken the image: TRANSPARENCY=1,-50,-50,-50
+</UL>
+</P>
+<P>
+Use the following snippet to change the settings of a folder:
+<PRE>
+/* Script to change the transparency settings of a folder */
+call RxFuncAdd 'SysLoadFuncs', 'RexxUtil', 'SysLoadFuncs'
+call SysLoadFuncs
+
+rc=SysSetObjectData('d:\desktop\My-Folder', "TRANSPARENCY=1,0,-20,25")
+IF rc= 1 THEN SAY "Settings changed!"
+</PRE>
+</P>
+<P>
+The settings for the desktop folder are handled in a special way. It's not possible to enable
+transparency for a desktop folder. But the color adaptation values are saved as default values for
+the color shading. These values are used if you click the <B>Standard</B> button on the 
+transparency settings page.
+</P>
+<HR>
+<A name="help">
+<H2>Getting help</H2></A>
+There's a mailing list on Yahoo-groups where you may post questions or bug reports. Go to
+the <A HREF="http://candybarz.netlabs.org">CandyBarZ</A> project page at <A HREF="http://www.netlabs.org">Netlabs</A> to subscribe.
+<HR>
+<P>
+CandyFolder was brought to you by Chris Wohlgemuth.  It's a <A HREF="http://www.netlabs.org"><IMG SRC="./netlabs.gif" BORDER=0></A>
+project.
+
+</P>
+</BODY>
+</HTML>

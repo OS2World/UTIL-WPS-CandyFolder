@@ -1,0 +1,17 @@
+GetStrings:
+nlsStrings.1='Be sure to have a backup of your INI-files!'
+nlsStrings.2='If not abort NOW'
+nlsStrings.3='Press <ENTER> to install or Ctrl-c to abort.'
+nlsStrings.4='Current directory is '
+nlsStrings.5='Registering class '
+nlsStrings.6='Error while registering class '
+nlsStrings.7='Exiting...'
+nlsStrings.8="CandyFolder Readme"
+nlsStrings.9='Error while creating URL-Object'
+nlsStrings.10='Note: You have to restart the WPS to load the new class.'
+nlsStrings.11='Press <ENTER>.'
+/* # of strings */
+nlsStrings.0=11
+
+return
+

@@ -1,0 +1,22 @@
+CandyFolder V0.1.0 (GPL-Freeware)
+(C) Chris Wohlgemuth 2001
+http://candybarz.netlabs.org
+http://www.geocities.com/SiliconValley/Sector/5785/
+
+CandyFolder is a replacement folder class which
+gives you (pseudo-)transparent backgrounds for your
+WPS folders. Use it together with CandyBarZ or your
+prefered WPS enhancer.
+Source code is available. NLS for german and english.
+
+The installation program needs the emx 
+runtime-libraries.
+Tested on Warp 4 but should also work with Warp 3.
+
+Licence:
+This package is provided 'as is' under the
+Gnu public Licence (GPL). 
+All files must be kept together.
+Read the file 'Copying' for further information.
+
+

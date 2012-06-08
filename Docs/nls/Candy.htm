@@ -1,0 +1,177 @@
+<HTML>
+<HEAD>
+<TITLE>CandyFolder</TITLE>
+
+<META NAME="DESCRIPTION" CONTENT="Candy folder -  An add on for CandyBarZ to enable transparency in folders">
+<META NAME="KEYWORDS" CONTENT="CandyBarZ folder transparency">
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<H1>CandyFolder</H1>
+<P>
+Ok, dies ist der n&auml;chste Streich ;-). <A HREF="http://www.netlabs.org">Netlabs</A> pr&auml;sentiert
+ein neues Gimmick, um den GHz Pentiathlon IX in die Knie zu zwingen.
+</P>
+<CENTER>
+<IMG SRC="./picture.jpg" WIDTH=434 height=461>
+</CENTER>
+
+<P>
+CandyFolder ist eine Erg&auml;nzung zu <A HREF="http://candybarz.netlabs.org">CandyBarZ</A>, die
+WPS-Ordner mit Transparenz ausstattet. Allerdings ist auch ein alleiniger Einsatz oder die Verbindung
+mit jedem anderen WPS-Versch&ouml;nerer m&ouml;glich.
+</P>
+<H3>Inhalt</H3>
+<UL>
+<LI><A HREF=#license>Lizenz</A>
+<LI><A HREF=#installation>Installation</A>
+<LI><A HREF=#uninstallation>Deinstallation</A>
+<LI><A HREF=#usage>Verwendung</A>
+<LI><A HREF=#setup>Setup-Strings</A>
+<LI><A HREF=#help>Hilfe bekommen</A>
+</UL>
+
+<HR>
+<A name="license">
+<H2>Lizenz</H2></A>
+<P>
+CandyFolder unterliegt der so genannten General Public License (<A HREF="./COPYING">GPL</A>).
+Die Datei <A HREF="./COPYING">COPYING</A> im Unterverzeichnis <B>Docs</B> gibt
+n&auml;here Informationen.
+<P>
+<PRE>
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; see the file COPYING.  If not, write to
+the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+</PRE>
+<HR>
+<A name="installation">
+<H2>Installation</H2></A>
+<P>
+<FONT color=RED>Sicherheitshalber Kopien der INI-Dateien anfertigen!</FONT>
+<OL>
+<LI>Das Archiv in ein beliebiges Verzeichnis entpacken.
+<LI>Ein  OS/2-Fenster &ouml;ffnen und in das Verzeichnis mit dem Archivinhalt wechseln.
+<LI>Das Skript <B>install.cmd</B> starten.
+<LI>Die WPS Neustarten.
+</OL>
+</P>
+<P>
+Das Installationsskript registriert die neue Ordnerklasse <B>CandyFolder</B>. Danach wird die
+Standardordnerklasse <B>WPFolder</B> durch die neue Klasse ersetzt, wodurch jeder Ordner
+die neue Transparenz-Funktion erh&auml;lt.
+</P>
+<P>
+Falls die WPS h&auml;ngen sollte, l&ouml;sche man die Datei <B>CANDYWPS.DLL</B>.
+</P>
+<HR>
+<A name="uninstallation">
+<H2>Deinstallation</H2></A>
+<P>
+Zum Deinstallieren einfach das Skript <B>uninstal.cmd</B> ausf&uuml;hren. Dieses macht die Ersetzung
+der Ordnerklasse r&uuml;ckg&auml;ngig und deregistriert <B>CandyFolder</B>.
+Nach einem Neustart der WPS k&ouml;nnen die Dateien gel&ouml;scht werden.
+</P>
+<HR>
+
+<A name="usage">
+<H2>Verwendung</H2></A>
+<P>
+Das Einstellungen-Notizbuch des Desktops &ouml;ffnen und zur <B>Hintergrund</B>-Seite wechseln.
+Ein Bild mit <FONT COLOR=RED>256 Farben und der Aufl&ouml;sung des Bildschirms</FONT> ausw&auml;hlen.
+Das neue Hintergrundbild wird mit der Breite der Bildschirmaufl&ouml;sung verglichen und nur bei
+&Uuml;bereistimmung akzeptiert. Es ist <B>nicht</B> m&ouml;glich gestreckte oder gekachelte Hintergr&uuml;nde
+zu verwenden.
+</P>
+<P>
+Auf der Hintergrundseite eines Ordners findet sich nach der Installation von CandyFolder eine weitere
+Checkbox <B>Transparenz</B> zum Aktivieren dieser Funktion. Die n&auml;chste Seite erlaubt
+das Anpassen des Farbtons.
+</P>
+<HR>
+<A name="setup">
+<H2>Setup-String</H2></A>
+<P>
+Die Transparenz-Funktion  wird durch einen neuen Setup-String unterst&uuml;tzt.
+</P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=10>
+<TR>
+<TD>Name</TD>
+<TD>Value</TD>
+<TD>Description</TD>
+</TR>
+<TR>
+<TD>TRANSPARENCY</TD>
+<TD>E,R,G,B</TD>
+<TD>
+<P>
+E = 1/0, <BR>
+1: Transparenz aktivieren<BR>
+0: Transparenz deaktivieren
+</P>
+<P>
+R = -127...128. Farbanpassung f&uuml;r Rot<BR>
+G = -127...128. Farbanpassung f&uuml;r Gr&uuml;n.<BR>
+B = -127...128. Farbanpassung f&uuml;r Blau.<BR>
+</P>
+<P>
+Der Bereich f&uuml;r die Farbanpassung ist -127...0...128. <BR>
+Ein negativer Wert bedeutet eine Verringerung des Anteils der Farbkomponente.
+0 bedeutet keine Ver&auml;nderung des Farbanteils.
+Ein positiver Wert f&uuml;hrt zu einer Erh&ouml;hung des Farbanteils.
+</P>
+</TD>
+</TR>
+</TABLE>
+
+<H3>Beispiele</H3>
+<P>
+<UL>
+<LI>Transparenz deaktivieren: TRANSPARENCY=0,0,0,0
+<LI>Transparenz aktivieren und das Bild bl&auml;ulich erscheinen lassen: TRANSPARENCY=1,0,0,20
+<LI>Transparenz aktivieren und die Helligkeit verringern: TRANSPARENCY=1,-50,-50,-50
+</UL>
+</P>
+<P>
+Das folgende Skript kann als Grundlage f&uuml;r die Anpassung der Eigenschaften eines Ordners verwendet
+werden:
+<PRE>
+/* Script to change the transparency settings of a folder */
+call RxFuncAdd 'SysLoadFuncs', 'RexxUtil', 'SysLoadFuncs'
+call SysLoadFuncs
+
+rc=SysSetObjectData('d:\desktop\My-Folder', "TRANSPARENCY=1,0,-20,25")
+IF rc= 1 THEN SAY "Settings changed!"
+</PRE>
+</P>
+<P>
+Die Einstellungen f&uuml;r den Desktop werden speziell behandelt. Es ist nicht m&ouml;glich
+Transparenz f&uuml;r den Desktop zu aktivieren. Die Farbanpassungswerte werden allerdings
+als Standardwerte gespeichert. Diese Werte werden verwendet, wenn auf der Transparenz-Seite
+des Einstellungen-Notizbuchs eines Ordners <B>Standard</B> geklickt wird.
+</P>
+<HR>
+<A name="help">
+<H2>Hilfe bekommen</H2></A>
+Es existiert eine Mailingliste auf Yahoo-Groups f&uuml;r Fragen und Fehlerreports. Die
+<A HREF="http://candybarz.netlabs.org">CandyBarZ-Seite</A> auf <A HREF="http://www.netlabs.org">Netlabs</A> 
+gibt hierzu weitere Informationen.
+<HR>
+<P>
+CandyFolder was brought to you by Chris Wohlgemuth.  It's a <A HREF="http://www.netlabs.org"><IMG SRC="./netlabs.gif" BORDER=0></A>
+project.
+
+</P>
+</BODY>
+</HTML>

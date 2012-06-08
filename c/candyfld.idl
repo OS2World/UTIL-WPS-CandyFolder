@@ -1,0 +1,158 @@
+/*
+ * CandyFld.idl:
+ */
+/*
+ * This file is (C) Chris Wohlgemuth 2001
+ * It is part of the CandyFolder package
+ *
+ * Visit
+ *
+ * http://candybarz.netlabs.org
+ *
+ * or
+ *
+ * http://www.geocities.com/SiliconValley/Sector/5785/
+ *
+ * for more information
+ *
+ */
+/*
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; see the file COPYING.  If not, write to
+ * the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+ */
+
+#include <wpfolder.idl>
+
+/*
+   CLASS: CandyFolder
+*/
+
+interface M_CandyFolder; 
+
+interface CandyFolder : WPFolder
+{
+
+    /*
+     * New instance methods
+     */
+
+void cfRefreshContainerBackgrounds(in BOOL bColorChange);
+/*
+This method cycles trough all open views of the folder and forces the
+backgrounds to be redrawn.
+*/
+
+#ifdef __SOMIDL__
+  implementation {
+
+    releaseorder:
+cfRefreshContainerBackgrounds;
+
+    /*
+     * Class Modifiers:
+     *
+     */
+
+    externalprefix = candyfolder_;
+    externalstem = candyfolder;
+    majorversion = 1;
+    minorversion = 1;
+    filestem = candyfld;           //# specifies the filestem for sc-generated files
+    metaclass = M_CandyFolder;
+    dllname = "Candywps.dll";
+    callstyle = oidl;
+
+    /*
+     * Internal instance variables
+     *
+     */
+ULONG ulBackgroundPageID;
+ULONG ulTransPageID;
+ULONG ulTrans;
+ULONG ulHaveToSave;
+HBITMAP hbmBG;
+ULONG ulRed;
+ULONG ulGreen;
+ULONG ulBlue;
+
+    /*
+     * WPFolder methods overridden 
+     *
+     */
+wpAddFolderBackgroundPage: override;
+wpOpen: override;
+wpDeleteFromObjUseList: override;
+wpSaveState: override;
+wpRestoreState: override;
+wpSaveString: override;
+wpRestoreString: override;
+wpSetup: override;
+
+#ifdef __PRIVATE__
+
+#endif
+
+  }; // implementation
+#endif /* __SOMIDL__ */
+};
+
+
+interface M_CandyFolder : M_WPFolder
+{
+
+    /*
+     * New class methods
+     */
+
+
+#ifdef __SOMIDL__
+  implementation {
+
+
+    /*
+     * Class Modifiers:
+     *
+     */
+
+    externalprefix = candyfolderM_;
+    externalstem = candyfolderM;
+    functionprefix = candyfolderM_;
+    majorversion = 1;
+    minorversion = 1;
+    filestem = candyfld;           //# specifies the filestem for sc-generated files
+    dllname = "candywps.dll";
+    callstyle = oidl;
+
+    /*
+     * Internal class variables
+     *
+     */
+
+    /*
+     * M_WPFolder methods overridden 
+     *
+     */
+
+    wpclsQueryTitle: override;
+    wpclsQueryStyle: override;    
+    wpclsInitData: ooverride;
+    wpclsUnInitData: override;
+
+  };
+
+#endif /* __SOMIDL__ */
+
+};
+
+

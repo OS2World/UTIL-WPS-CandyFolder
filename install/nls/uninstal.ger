@@ -1,0 +1,12 @@
+GetStrings:
+nlsStrings.1='<ENTER> zum Deinstallieren oder Ctrl-c fÅr Abbruch.'
+nlsStrings.2='Aktuelles Verzeichnis ist '
+nlsStrings.3='RÅckgÑngig machen der Klassenersetzung...'
+nlsStrings.4='Deregistriere Klasse '
+nlsStrings.5='Fehler beim Deregistrieren der Klasse '
+nlsStrings.6='<ENTER>, um die Deinstallation abzuschlie·en.'
+/* # of strings */
+nlsStrings.0=6
+
+return
+

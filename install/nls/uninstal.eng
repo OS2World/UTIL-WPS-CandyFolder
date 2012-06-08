@@ -1,0 +1,12 @@
+GetStrings:
+nlsStrings.1='Press <ENTER> to uninstall or Ctrl-c to abort.'
+nlsStrings.2='Current directory is '
+nlsStrings.3='Unreplacing folder class...'
+nlsStrings.4='Deregistering class '
+nlsStrings.5='Error while deregistering class '
+nlsStrings.6='Press <ENTER> to quit.'
+/* # of strings */
+nlsStrings.0=6
+
+return
+
