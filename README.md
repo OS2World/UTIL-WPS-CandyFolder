@@ -11,11 +11,15 @@ LICENSE
 ===============
 GNU GPL V2
 
-AUTHOR
+COMPILE TOOLS
+===============
+*
+
+AUTHORS
 ===============
 Chris Wohlgemuth
 
 LINKS
 ===============
-http://www.os2world.com/cdwriting/candyfolder/candyfoldermain.htm
-http://candybarz.netlabs.org
+* http://www.os2world.com/cdwriting/candyfolder/candyfoldermain.htm
+* http://candybarz.netlabs.org
